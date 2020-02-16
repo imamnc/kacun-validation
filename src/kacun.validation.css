@@ -1,0 +1,18 @@
+.not-valid {
+	background-color: #ffaeae;
+}
+
+.strongPassword {
+	color: #0EC658 !important;
+	border-color: #0EC658 !important;
+}
+
+.mediumPassword {
+	color: #E4B71C !important;
+	border-color: #E4B71C !important;
+}
+
+.weakPassword {
+	color: #EE2828 !important;
+	border-color: #EE2828 !important;
+}

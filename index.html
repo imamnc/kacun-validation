@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kacun Validation</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/kacun.validation.css">
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="src/kacun.validation.js"></script>
+</head>
+
+<body class="bg-dark">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="header mb-4 pb-3 text-center border-bottom">
+                    <h2 class="text-white p-2 mb-1 font-weight-bold">Form Validation</h2>
+                    <span class="text-warning">Creator : Imam Nc</span>
+                    <span class="text-white"> | Build on JQuery</span>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-8 col-sm-10 col-11">
+                <form action="" method="post" id="formValid">
+                    <input type="text" name="nama" id="nama" class="form-control mt-2 required" placeholder="Nama">
+                    <input type="tel" name="phone" id="phone" class="form-control mt-2 required phone"
+                        placeholder="Phone">
+                    <input type="email" name="email" id="email" class="form-control mt-2 required email"
+                        placeholder="Email">
+                    <input type="password" name="password" id="password" class="form-control mt-2 required"
+                        placeholder="Password" data-label="passwordCheck" data-pattern="strong" data-minlength="10">
+                    <small id="passwordCheck"></small>
+                    <textarea name="deskripsi" id="deskripsi" class="form-control mt-2" placeholder="Detail"
+                        data-minlength="5"></textarea>
+                    <button type="submit" class="btn btn-success mt-2 w-100" id="submitForm">Kirim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#submitForm').click(function (e) {
+                e.preventDefault();
+                $('#formValid').validate(function () {
+                    alert('Berhasil');
+                });
+            });
+            $('input[type=password]').keyup(function () {
+                $(this).checkPassword();
+            });
+        });
+    </script>
+</body>
+
+</html>
